@@ -1,0 +1,7 @@
+The issue arises when using Tailwind's `@apply` directive with classes that contain variables or expressions.  For example, if you define a custom class like this:
+
+```css
+.bg-dynamic { @apply bg-[var(--my-color)] } 
+```
+
+and then try to use it with a dynamic variable value, Tailwind might not correctly evaluate the variable or expression, leading to unexpected styling or no styling at all.  This is especially problematic when the variable is set dynamically via JavaScript or some other external mechanism.
