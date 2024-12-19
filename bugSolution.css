@@ -1,0 +1,17 @@
+Avoid using CSS variables directly within `@apply` directives.  Instead, create separate utility classes for different variable values. For instance, instead of:
+
+```css
+.bg-dynamic { @apply bg-[var(--my-color)] } 
+```
+
+Create dedicated classes for each color:
+
+```css
+.bg-red { @apply bg-red-500 }
+.bg-blue { @apply bg-blue-500 }
+.bg-green { @apply bg-green-500 }
+```
+
+Then, dynamically apply these classes using JavaScript or your framework's state management.
+
+Alternatively, if you must use dynamic values, consider using JavaScript to directly manipulate the element's style attribute instead of relying on Tailwind classes entirely.  In many scenarios, this is cleaner and more reliable for highly dynamic styles.
